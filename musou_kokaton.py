@@ -101,10 +101,8 @@ class Bird(pg.sprite.Sprite):
             self.dire = tuple(sum_mv)
             self.image = self.imgs[self.dire]
         screen.blit(self.image, self.rect)
-    
     def get_direction(self) -> tuple[int, int]:
         return self.dire
-    
 
 class Bomb(pg.sprite.Sprite):
     """
@@ -270,6 +268,10 @@ def main():
                 return 0
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 beams.add(Beam(bird))
+            if key_lst[pg.K_LSHIFT]:
+                bird.speed=20
+            else:
+                bird.speed = 10
         screen.blit(bg_img, [0, 0])
 
         if tmr%200 == 0:  # 200フレームに1回，敵機を出現させる
