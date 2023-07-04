@@ -249,7 +249,6 @@ class Score:
         screen.blit(self.image, self.rect)
 
 
-
 class Gravity(pg.sprite.Sprite):
     """
     重力球に関するクラス
@@ -279,6 +278,7 @@ class Gravity(pg.sprite.Sprite):
         self.life -= 1
         if self.life <= 0:
             self.kill()
+
 
 def main():
     pg.display.set_caption("真！こうかとん無双")
